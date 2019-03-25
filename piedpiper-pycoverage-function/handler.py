@@ -1,4 +1,3 @@
-import io
 import os
 import subprocess
 
@@ -14,7 +13,7 @@ def handle(request):
     try:
         zip_files = build_temp_zipfiles(request)
         temp_directories = build_directories(request)
-        report  = ''
+        report = ''
         for zip_file, temp_directory in zip(zip_files, temp_directories):
             unzip_files(zip_file, temp_directory.name)
             os.chdir(temp_directory.name)
